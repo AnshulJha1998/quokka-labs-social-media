@@ -1,4 +1,5 @@
-import SelectCheckbox from "./SelectCheckbox";
-import Navbar from "./Navbar";
+import AppBar from "./AppBar";
+import MainError from "./MainError";
+import Post from "./Post";
 
-export { Navbar, SelectCheckbox };
+export { AppBar, Post, MainError };

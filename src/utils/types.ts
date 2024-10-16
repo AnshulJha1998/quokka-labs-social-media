@@ -1,31 +1,27 @@
-export type COLORS = "magenta" | "green" | "red";
-
-export type QUESTION = {
+export type PostType = {
   id: string;
-  question: string;
-  options: string[];
-  correctAnswer: string;
-  timeLimit: number;
+  imageUrl: string;
+  username: string;
+  likes: string[];
+  comments: CommentType[];
+  saves: string[];
+  userId: string;
+  createdAt: Date;
 };
 
-export type QUESTION_CATEGORY_TYPE = {
+export type PageType = "savedPosts" | "myPosts" | "feeds";
+
+export type CommentType = {
   id: string;
-  name: string;
-  questions: QUESTION[];
+  username: string;
+  text: string;
+  replies: ReplyType[];
 };
 
-export type SELECT_BOX_ARG = {
-  topic: string;
-  id: string;
-  selectionOption: string;
-};
+export type ReplyType = { id: string; username: string; text: string };
 
-export type SELECT_CHECKBOX_TYPE = {
-  color: COLORS;
-  size: "small" | "wide";
-  onCheckboxSelect: (arg: SELECT_BOX_ARG) => void;
-  value: string;
-  quizTopic: string;
-  id: string;
-  isChecked: boolean;
+export type PostProps = {
+  post: PostType;
+  setPosts: React.Dispatch<React.SetStateAction<PostType[]>>;
+  type: PageType;
 };
